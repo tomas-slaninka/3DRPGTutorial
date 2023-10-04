@@ -1,0 +1,8 @@
+res://world.tscn
+res://Outside.tres
+res://Library2.tres
+res://monster_skelleton.gd
+res://Player/player.tscn
+res://monster_skelleton.tscn
+res://Player/player.gd
+res://Player/WeaponSlotRight.gd

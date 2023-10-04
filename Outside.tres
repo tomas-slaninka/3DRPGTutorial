@@ -1,0 +1,14 @@
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://dfxgf27ye8es"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3y0y2"]
+sky_top_color = Color(0.72549, 0.980392, 0.988235, 1)
+sky_horizon_color = Color(0, 0.47451, 0.694118, 1)
+
+[sub_resource type="Sky" id="Sky_1b4h5"]
+sky_material = SubResource("ProceduralSkyMaterial_3y0y2")
+radiance_size = 2
+
+[resource]
+background_mode = 1
+sky = SubResource("Sky_1b4h5")
+fog_enabled = true

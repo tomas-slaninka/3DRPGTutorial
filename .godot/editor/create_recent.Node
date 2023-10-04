@@ -1,0 +1,16 @@
+Node3D
+CollisionShape3D
+Area3D
+CharacterBody3D
+OmniLight3D
+SpotLight3D
+GPUParticles3D
+GridMap
+StaticBody3D
+Node2D
+AnimationTree
+SpringArm3D
+BoneAttachment3D
+WorldEnvironment
+MeshInstance3D
+Camera3D
