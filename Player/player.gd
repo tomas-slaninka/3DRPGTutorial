@@ -33,7 +33,6 @@ func _physics_process(delta):
 		0, 
 		Input.get_action_strength("WalkUp") - Input.get_action_strength("WalkDown") )
 
-
 	direction = direction.rotated(Vector3.UP, h_rot).normalized()
 	move_and_slide()
 	

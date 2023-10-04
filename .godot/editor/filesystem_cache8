@@ -1,14 +1,14 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1696359518
+::res://::1696416197
 icon.svg::CompressedTexture2D::141328744054636249::1689149560::1689149568::1::::<><>::
-Library2.tres::MeshLibrary::8017738979495330974::1696333793::0::1::::<><>::uid://gxa1032tk332::::res://Assets/KayKit_DungeonRemastered_1.0_FREE/KayKit_DungeonRemastered_1.0_FREE/Assets/gltf/floor_tile_small_dungeon_texture.png<>uid://b623fjualqjjm::::res://Assets/KayKit_DungeonRemastered_1.0_FREE/KayKit_DungeonRemastered_1.0_FREE/Assets/gltf/floor_tile_small_decorated_dungeon_texture.png<>uid://dryoes3q8vx74::::res://Assets/KayKit_DungeonRemastered_1.0_FREE/KayKit_DungeonRemastered_1.0_FREE/Assets/gltf/wall_corner_dungeon_texture.png<>uid://dadknc1otmukt::::res://Assets/KayKit_DungeonRemastered_1.0_FREE/KayKit_DungeonRemastered_1.0_FREE/Assets/gltf/wall_dungeon_texture.png
+Library2.tres::MeshLibrary::8017738979495330974::1696414723::0::1::::<><>::uid://gxa1032tk332::::res://Assets/KayKit_DungeonRemastered_1.0_FREE/KayKit_DungeonRemastered_1.0_FREE/Assets/gltf/floor_tile_small_dungeon_texture.png<>uid://b623fjualqjjm::::res://Assets/KayKit_DungeonRemastered_1.0_FREE/KayKit_DungeonRemastered_1.0_FREE/Assets/gltf/floor_tile_small_decorated_dungeon_texture.png<>uid://dryoes3q8vx74::::res://Assets/KayKit_DungeonRemastered_1.0_FREE/KayKit_DungeonRemastered_1.0_FREE/Assets/gltf/wall_corner_dungeon_texture.png<>uid://dadknc1otmukt::::res://Assets/KayKit_DungeonRemastered_1.0_FREE/KayKit_DungeonRemastered_1.0_FREE/Assets/gltf/wall_dungeon_texture.png
 Library.tres::MeshLibrary::907577739489074616::1696247111::0::1::::<><>::uid://gxa1032tk332
-library.tscn::PackedScene::7928796790087625157::1696334507::0::1::::<><>::uid://gxa1032tk332::::res://Assets/KayKit_DungeonRemastered_1.0_FREE/KayKit_DungeonRemastered_1.0_FREE/Assets/gltf/floor_tile_small_dungeon_texture.png<>uid://b623fjualqjjm::::res://Assets/KayKit_DungeonRemastered_1.0_FREE/KayKit_DungeonRemastered_1.0_FREE/Assets/gltf/floor_tile_small_decorated_dungeon_texture.png<>uid://dryoes3q8vx74::::res://Assets/KayKit_DungeonRemastered_1.0_FREE/KayKit_DungeonRemastered_1.0_FREE/Assets/gltf/wall_corner_dungeon_texture.png<>uid://dadknc1otmukt::::res://Assets/KayKit_DungeonRemastered_1.0_FREE/KayKit_DungeonRemastered_1.0_FREE/Assets/gltf/wall_dungeon_texture.png
-monster_skelleton.gd::GDScript::-1::1696337910::0::1::::<>CharacterBody3D<>::
-monster_skelleton.tscn::PackedScene::2608370002613324395::1696338236::0::1::::<><>::res://Player/WeaponSlotRight.gd<>res://monster_skelleton.gd
-Outside.tres::Environment::222295931094125182::1696333793::0::1::::<><>::
-torch_mounted_gltf.tscn::PackedScene::6490515982866005180::1696334507::0::1::::<><>::uid://c8bx84oidm6md::::res://Assets/KayKit_DungeonRemastered_1.0_FREE/KayKit_DungeonRemastered_1.0_FREE/Assets/gltf/torch_mounted_dungeon_texture.png
-world.tscn::PackedScene::1833650945458824839::1696338415::0::1::::<><>::uid://ck2lynqvtmrhs::::res://Player/player.tscn<>uid://dfxgf27ye8es::::res://Outside.tres<>uid://dmh38v7xl2yn3::::res://Library2.tres<>uid://cyqb35s5hom01::::res://torch_mounted_gltf.tscn<>uid://bdfrqcvdyi32f::::res://monster_skelleton.tscn
+library.tscn::PackedScene::7928796790087625157::1696334507::0::1::::<><>::uid://gxa1032tk332
+monster_skelleton.gd::GDScript::-1::1696362703::0::1::::<>CharacterBody3D<>::
+monster_skelleton.tscn::PackedScene::2608370002613324395::1696415549::0::1::::<><>::res://Player/WeaponSlotRight.gd<>res://monster_skelleton.gd
+Outside.tres::Environment::222295931094125182::1696414723::0::1::::<><>::
+torch_mounted_gltf.tscn::PackedScene::6490515982866005180::1696334507::0::1::::<><>::uid://c8bx84oidm6md
+world.tscn::PackedScene::1833650945458824839::1696415548::0::1::::<><>::uid://ck2lynqvtmrhs::::res://Player/player.tscn<>uid://dfxgf27ye8es::::res://Outside.tres<>uid://dmh38v7xl2yn3::::res://Library2.tres<>uid://cyqb35s5hom01::::res://torch_mounted_gltf.tscn<>uid://bdfrqcvdyi32f::::res://monster_skelleton.tscn
 ::res://Assets/::1691497464
 ::res://Assets/KayKit Character Animations 1.2/::1689150291
 ::res://Assets/KayKit Character Animations 1.2/Animations/::1689150291
@@ -477,11 +477,14 @@ Knight.glb::PackedScene::7973802182469851890::1691497393::1691497426::1::::<><>:
 Knight_Image.png::CompressedTexture2D::5769170385521836983::1691497420::1691497420::1::::<><>::
 Knight_Paladin_diffuse.png::CompressedTexture2D::5560204637725961161::1691497424::1691497427::1::::<><>::
 Knight_Paladin_normal.png::CompressedTexture2D::4713742811586859652::1691497421::1691497427::1::::<><>::
-::res://Player/::1696338236
+::res://Global/::1696415548
+Game.gd::GDScript::-1::1696414847::0::1::::<>Node<>::
+Inv.gd::GDScript::-1::1696415548::0::1::::<>Node<>::
+::res://Player/::1696415554
 CameraController.gd::GDScript::-1::1696240352::0::1::::<>Node3D<>::
-player.gd::GDScript::-1::1696240464::0::1::::<>CharacterBody3D<>::
-player.tscn::PackedScene::5531179457600736884::1696338236::0::1::::<><>::res://Player/player.gd<>res://Player/WeaponSlotRight.gd<>res://Player/CameraController.gd
-WeaponSlotRight.gd::GDScript::-1::1696334794::0::1::::<>Area3D<>::
+player.gd::GDScript::-1::1696412729::0::1::::<>CharacterBody3D<>::
+player.tscn::PackedScene::5531179457600736884::1696415554::0::1::::<><>::res://Player/player.gd<>res://Player/WeaponSlotRight.gd<>res://Player/CameraController.gd
+WeaponSlotRight.gd::GDScript::-1::1696362192::0::1::::<>Area3D<>::
 ::res://Player/States/::1696334372
 Attack_State.gd::GDScript::-1::1696334372::0::1::::AttackState<>State<>::
 Blue Mid House.fbx::PackedScene::509959717821564151::1695106345::1695106476::1::::<><>::

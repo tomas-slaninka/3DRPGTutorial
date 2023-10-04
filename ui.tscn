@@ -1,0 +1,108 @@
+[gd_scene load_steps=7 format=3 uid="uid://dnylu3gg2m6ys"]
+
+[ext_resource type="Script" path="res://ui.gd" id="1_f8xo2"]
+[ext_resource type="Script" path="res://InvContainer.gd" id="2_3wiyb"]
+
+[sub_resource type="Animation" id="Animation_evav1"]
+resource_name = "TransIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Inventory:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(64, 650), Vector2(64, 64)]
+}
+
+[sub_resource type="Animation" id="Animation_tcrew"]
+resource_name = "TransOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Inventory:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(64, 64), Vector2(64, 650)]
+}
+
+[sub_resource type="Animation" id="Animation_ofvsh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Inventory:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(64, 650)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uc03j"]
+_data = {
+"RESET": SubResource("Animation_ofvsh"),
+"TransIn": SubResource("Animation_evav1"),
+"TransOut": SubResource("Animation_tcrew")
+}
+
+[node name="UI" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_f8xo2")
+
+[node name="Inventory" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 64.0
+offset_top = 650.0
+offset_right = 104.0
+offset_bottom = 690.0
+
+[node name="BG" type="Panel" parent="Inventory"]
+offset_right = 1024.0
+offset_bottom = 512.0
+metadata/_edit_lock_ = true
+
+[node name="InvContainer" type="GridContainer" parent="Inventory"]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 118.0
+offset_right = 962.0
+offset_bottom = 438.0
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 6
+script = ExtResource("2_3wiyb")
+
+[node name="Close" type="Button" parent="Inventory"]
+layout_mode = 0
+offset_left = 888.0
+offset_right = 1024.0
+offset_bottom = 40.0
+text = "Close"
+
+[node name="Title" type="Label" parent="Inventory"]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 1024.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 28
+text = "Invenoty"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_uc03j")
+}
+
+[connection signal="pressed" from="Inventory/Close" to="." method="_on_close_pressed"]
