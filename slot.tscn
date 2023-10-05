@@ -9,8 +9,10 @@ offset_bottom = 40.0
 script = ExtResource("1_igwgs")
 
 [node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(32, 32)
 
 [node name="Count" type="Label" parent="."]
+layout_mode = 0
 offset_top = 48.0
 offset_right = 64.0
 offset_bottom = 69.0

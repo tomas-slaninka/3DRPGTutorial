@@ -20,7 +20,7 @@ var items = {
 		"Desc": "This is a Sword",
 		"Cost": "70",
 		"Type": "Weapon",
-		"Icon": preload("res://icon.svg")
+		"Icon": preload("res://Sword.png")
 	}
 }
 

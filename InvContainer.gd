@@ -11,6 +11,14 @@ func _ready():
 	fillInventorySlots()
 
 func fillInventorySlots():
+	for i in invSize:
+		get_child(i).ItemName = ""
+		get_child(i).ItemDes = ""
+		get_child(i).ItemCost = ""
+		get_child(i).ItemCount = ""
+		get_child(i).ItemType = ""
+		get_child(i).hasItem = false
+		
 	for i in Inv.inventory:
 		get_child(i).ItemName = Inv.inventory[i]["Name"]
 		get_child(i).ItemDes = Inv.inventory[i]["Desc"]
