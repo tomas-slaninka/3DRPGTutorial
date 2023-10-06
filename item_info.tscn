@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b16n7netab8w0"]
+[gd_scene load_steps=7 format=3 uid="uid://b16n7netab8w0"]
 
 [ext_resource type="Script" path="res://item_info.gd" id="1_iourg"]
+[ext_resource type="Texture2D" uid="uid://cg468qpkk0hln" path="res://Sword.png" id="2_fu02s"]
 
 [sub_resource type="Animation" id="Animation_3vplv"]
 length = 0.001
@@ -101,7 +102,9 @@ text = "Close
 "
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(96, 64)
+position = Vector2(96, 72)
+scale = Vector2(2, 2)
+texture = ExtResource("2_fu02s")
 
 [connection signal="pressed" from="Use" to="." method="_on_use_pressed"]
 [connection signal="pressed" from="Close" to="." method="_on_close_pressed"]

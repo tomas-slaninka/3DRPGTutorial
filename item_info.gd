@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+@onready var anim = get_node("Anim")
 var ItemName = ""
 var ItemDes = ""
 var ItemCost = 0
@@ -16,8 +17,24 @@ func updateInfo():
 
 
 func _on_close_pressed():
-	pass # Replace with function body.
+	get_node("../").process_mode = Node.PROCESS_MODE_ALWAYS
+	anim.play("TransOff")
 
 
 func _on_use_pressed():
-	pass # Replace with function body.
+	for i in Inv.inventory:
+		if Inv.inventory[i]["Name"] == ItemName:
+			ItemCount -= 1
+			if ItemCount == 0:
+				var tempDict = {}
+				for x in Inv.inventory:
+					if x > i:
+						tempDict[x-1] = Inv.inventory[x]
+					elif x < i:
+						tempDict[x] = Inv.inventory[x]
+				Inv.inventory.clear()
+				Inv.inventory = tempDict
+				_on_close_pressed()
+			else:
+				Inv.inventory[i]["Count"] = ItemCount
+	get_node("../InvContainer").fillInventorySlots()

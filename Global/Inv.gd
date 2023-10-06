@@ -6,7 +6,7 @@ var items = {
 		"Desc": "This is a Staff",
 		"Cost": "100",
 		"Type": "Weapon",
-		"Icon": preload("res://icon.svg"),
+		"Icon": preload("res://staff.png"),
 	},
 	1 : {
 		"Name": "Green Arrow",
@@ -30,6 +30,8 @@ var inventory = {
 
 func _ready():
 	addItem("Sword")
+	addItem("Sword")
+	addItem("Staff")
 
 func addItem(itemName):
 	var hasItem = false
