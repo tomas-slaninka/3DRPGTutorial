@@ -24,6 +24,8 @@ func _input(event):
 	if event.is_action_pressed("LeftClick"):
 		if mouseEntered:
 			# itemInfo.get_node("Anim").play("TransIn")
+			itemInfo.get_node("Use").show()
+			itemInfo.get_node("Unequip").hide()
 			itemInfo.offset.x = get_viewport().get_mouse_position().x
 			itemInfo.offset.y = get_viewport().get_mouse_position().y
 			itemInfo.ItemName = ItemName

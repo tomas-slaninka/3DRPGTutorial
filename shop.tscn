@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://nonjjcjpauth"]
+
+[ext_resource type="Script" path="res://shop.gd" id="1_xhjim"]
+[ext_resource type="PackedScene" uid="uid://wvpw1pnh81w7" path="res://shop_ui.tscn" id="2_gn526"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_tqs0o"]
+radius = 1.00363
+
+[node name="Shop" type="Area3D"]
+script = ExtResource("1_xhjim")
+
+[node name="ShopUI" parent="." instance=ExtResource("2_gn526")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_tqs0o")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

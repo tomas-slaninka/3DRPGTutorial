@@ -16,6 +16,7 @@ var state_factory
 @onready var player_mesh = get_node("KayKit_AnimatedCharacter_v1_2")
 
 func _ready():
+	Utils.load_game()
 	state_factory = StateFactory.new()
 	change_state("idle")
 

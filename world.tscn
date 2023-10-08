@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://1eh70orl8gp0"]
+[gd_scene load_steps=7 format=3 uid="uid://1eh70orl8gp0"]
 
 [ext_resource type="PackedScene" uid="uid://ck2lynqvtmrhs" path="res://Player/player.tscn" id="1_18w1k"]
 [ext_resource type="Environment" uid="uid://dfxgf27ye8es" path="res://Outside.tres" id="2_4mb0p"]
 [ext_resource type="MeshLibrary" uid="uid://dmh38v7xl2yn3" path="res://Library2.tres" id="2_grnmb"]
 [ext_resource type="PackedScene" uid="uid://cyqb35s5hom01" path="res://torch_mounted_gltf.tscn" id="3_bxrwh"]
 [ext_resource type="PackedScene" uid="uid://bdfrqcvdyi32f" path="res://monster_skelleton.tscn" id="5_d1c78"]
+[ext_resource type="PackedScene" uid="uid://nonjjcjpauth" path="res://shop.tscn" id="6_si7w2"]
 
 [node name="World" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4355, 2.27911, -7.68643)
@@ -45,3 +46,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -9.51668)
 
 [node name="MonsterSkelleton" parent="Monsters" instance=ExtResource("5_d1c78")]
 transform = Transform3D(-0.998757, 0, -0.0498433, 0, 1, 0, 0.0498433, 0, -0.998757, 0.355249, 1.87039, 7.11847)
+
+[node name="Shop" parent="." instance=ExtResource("6_si7w2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.7123, 2.60683, -11.2914)

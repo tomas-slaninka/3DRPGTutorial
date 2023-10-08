@@ -1,0 +1,150 @@
+[gd_scene load_steps=8 format=3 uid="uid://wvpw1pnh81w7"]
+
+[ext_resource type="Script" path="res://shop_ui.gd" id="1_6vlf2"]
+[ext_resource type="Texture2D" uid="uid://borrkof6sity7" path="res://Boots.png" id="1_bte4h"]
+[ext_resource type="Script" path="res://Gold.gd" id="3_ud1gb"]
+
+[sub_resource type="Animation" id="Animation_r0m1m"]
+resource_name = "TransIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shop:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(64, 650), Vector2(64, 64)]
+}
+
+[sub_resource type="Animation" id="Animation_afyh1"]
+resource_name = "TransOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shop:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(64, 64), Vector2(64, 650)]
+}
+
+[sub_resource type="Animation" id="Animation_tbg0g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shop:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(64, 650)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q1gkm"]
+_data = {
+"RESET": SubResource("Animation_tbg0g"),
+"TransIn": SubResource("Animation_r0m1m"),
+"TransOut": SubResource("Animation_afyh1")
+}
+
+[node name="ShopUI" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_6vlf2")
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+autoplay = "RESET"
+libraries = {
+"": SubResource("AnimationLibrary_q1gkm")
+}
+
+[node name="Shop" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 64.0
+offset_top = 650.0
+offset_right = 1088.0
+offset_bottom = 1162.0
+
+[node name="BG" type="Panel" parent="Shop"]
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 512.0
+metadata/_edit_lock_ = true
+
+[node name="Close" type="Button" parent="Shop"]
+layout_mode = 0
+offset_left = 888.0
+offset_right = 1024.0
+offset_bottom = 40.0
+text = "Close"
+
+[node name="Next" type="Button" parent="Shop"]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 214.0
+offset_right = 704.0
+offset_bottom = 278.0
+text = ">"
+
+[node name="Prev" type="Button" parent="Shop"]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 214.0
+offset_right = 384.0
+offset_bottom = 278.0
+text = "<"
+
+[node name="Purchase" type="Button" parent="Shop"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 438.0
+offset_right = 576.0
+offset_bottom = 502.0
+text = "Purchase"
+
+[node name="Title" type="Label" parent="Shop"]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 1024.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 28
+text = "Shop"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Desc" type="Label" parent="Shop"]
+layout_mode = 0
+offset_left = -8.0
+offset_top = 374.0
+offset_right = 1016.0
+offset_bottom = 416.0
+theme_override_font_sizes/font_size = 28
+text = "This is a description"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemIcon" type="Sprite2D" parent="Shop"]
+position = Vector2(512, 246)
+scale = Vector2(8, 8)
+texture = ExtResource("1_bte4h")
+
+[node name="Gold" type="Label" parent="Shop"]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 26.0
+text = "Gold:"
+script = ExtResource("3_ud1gb")
+
+[connection signal="pressed" from="Shop/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Shop/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Shop/Prev" to="." method="_on_prev_pressed"]
+[connection signal="pressed" from="Shop/Purchase" to="." method="_on_purchase_pressed"]

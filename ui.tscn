@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dnylu3gg2m6ys"]
+[gd_scene load_steps=10 format=3 uid="uid://dnylu3gg2m6ys"]
 
 [ext_resource type="Script" path="res://ui.gd" id="1_f8xo2"]
 [ext_resource type="Script" path="res://InvContainer.gd" id="2_3wiyb"]
 [ext_resource type="PackedScene" uid="uid://b16n7netab8w0" path="res://item_info.tscn" id="3_r4bhq"]
+[ext_resource type="Texture2D" uid="uid://cg468qpkk0hln" path="res://Sword.png" id="4_7gvfq"]
+[ext_resource type="Script" path="res://Equip.gd" id="4_hn5e6"]
 
 [sub_resource type="Animation" id="Animation_ofvsh"]
 length = 0.001
@@ -65,8 +67,8 @@ layout_mode = 3
 anchors_preset = 0
 offset_left = 64.0
 offset_top = 650.0
-offset_right = 104.0
-offset_bottom = 690.0
+offset_right = 1088.0
+offset_bottom = 1162.0
 
 [node name="BG" type="Panel" parent="Inventory"]
 layout_mode = 0
@@ -104,9 +106,107 @@ vertical_alignment = 1
 
 [node name="ItemInfo" parent="Inventory" instance=ExtResource("3_r4bhq")]
 
+[node name="Equip" type="Node2D" parent="Inventory"]
+
+[node name="Head" type="Panel" parent="Inventory/Equip"]
+process_mode = 3
+custom_minimum_size = Vector2(64, 64)
+offset_left = 224.0
+offset_top = 136.0
+offset_right = 288.0
+offset_bottom = 200.0
+script = ExtResource("4_hn5e6")
+
+[node name="Icon" type="Sprite2D" parent="Inventory/Equip/Head"]
+position = Vector2(32, 32)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_7gvfq")
+
+[node name="Chest" type="Panel" parent="Inventory/Equip"]
+process_mode = 3
+custom_minimum_size = Vector2(64, 64)
+offset_left = 224.0
+offset_top = 224.0
+offset_right = 288.0
+offset_bottom = 288.0
+script = ExtResource("4_hn5e6")
+
+[node name="Icon" type="Sprite2D" parent="Inventory/Equip/Chest"]
+position = Vector2(32, 32)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_7gvfq")
+
+[node name="Legs" type="Panel" parent="Inventory/Equip"]
+process_mode = 3
+custom_minimum_size = Vector2(64, 64)
+offset_left = 224.0
+offset_top = 312.0
+offset_right = 288.0
+offset_bottom = 376.0
+script = ExtResource("4_hn5e6")
+
+[node name="Icon" type="Sprite2D" parent="Inventory/Equip/Legs"]
+position = Vector2(32, 32)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_7gvfq")
+
+[node name="Feet" type="Panel" parent="Inventory/Equip"]
+process_mode = 3
+custom_minimum_size = Vector2(64, 64)
+offset_left = 224.0
+offset_top = 400.0
+offset_right = 288.0
+offset_bottom = 464.0
+script = ExtResource("4_hn5e6")
+
+[node name="Icon" type="Sprite2D" parent="Inventory/Equip/Feet"]
+position = Vector2(32, 32)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_7gvfq")
+
+[node name="RightHand" type="Panel" parent="Inventory/Equip"]
+process_mode = 3
+custom_minimum_size = Vector2(64, 64)
+offset_left = 128.0
+offset_top = 256.0
+offset_right = 192.0
+offset_bottom = 320.0
+script = ExtResource("4_hn5e6")
+
+[node name="Icon" type="Sprite2D" parent="Inventory/Equip/RightHand"]
+position = Vector2(32, 32)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_7gvfq")
+
+[node name="LeftHand" type="Panel" parent="Inventory/Equip"]
+process_mode = 3
+custom_minimum_size = Vector2(64, 64)
+offset_left = 320.0
+offset_top = 256.0
+offset_right = 384.0
+offset_bottom = 320.0
+script = ExtResource("4_hn5e6")
+
+[node name="Icon" type="Sprite2D" parent="Inventory/Equip/LeftHand"]
+position = Vector2(32, 32)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_7gvfq")
+
 [node name="Anim" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_uc03j")
 }
 
 [connection signal="pressed" from="Inventory/Close" to="." method="_on_close_pressed"]
+[connection signal="mouse_entered" from="Inventory/Equip/Head" to="Inventory/Equip/Head" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Inventory/Equip/Head" to="Inventory/Equip/Head" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Inventory/Equip/Chest" to="Inventory/Equip/Chest" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Inventory/Equip/Chest" to="Inventory/Equip/Chest" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Inventory/Equip/Legs" to="Inventory/Equip/Legs" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Inventory/Equip/Legs" to="Inventory/Equip/Legs" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Inventory/Equip/Feet" to="Inventory/Equip/Feet" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Inventory/Equip/Feet" to="Inventory/Equip/Feet" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Inventory/Equip/RightHand" to="Inventory/Equip/RightHand" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Inventory/Equip/RightHand" to="Inventory/Equip/RightHand" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Inventory/Equip/LeftHand" to="Inventory/Equip/LeftHand" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Inventory/Equip/LeftHand" to="Inventory/Equip/LeftHand" method="_on_mouse_exited"]
