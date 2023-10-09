@@ -1,6 +1,5 @@
 [gd_scene load_steps=60 format=3 uid="uid://bdfrqcvdyi32f"]
 
-[ext_resource type="Script" path="res://Player/WeaponSlotRight.gd" id="1_e0v3c"]
 [ext_resource type="Script" path="res://monster_skelleton.gd" id="1_xokpt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ls3o7"]
@@ -346,6 +345,16 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6h57v")
+
+[sub_resource type="GDScript" id="GDScript_gsfph"]
+script/source = "extends Area3D
+
+func _on_body_entered(body):
+	print(\"entered\")
+	if body.is_in_group(\"Player\"):
+		print(\"attacked\")
+		Game.health -= 5
+"
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_me3ht"]
 radius = 0.100981
@@ -4080,7 +4089,7 @@ bone_idx = 5
 
 [node name="WeaponSlotRight" type="Area3D" parent="KayKit_AnimatedCharacter_v1_2/KayKit Animated Character2/Skeleton3D/HandSlotRight"]
 transform = Transform3D(0.999502, -0.0110166, -0.0295552, 0.0106729, 0.999874, -0.0117603, 0.0296811, 0.011439, 0.999494, 0.0114368, -0.00309668, 0.0121817)
-script = ExtResource("1_e0v3c")
+script = SubResource("GDScript_gsfph")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="KayKit_AnimatedCharacter_v1_2/KayKit Animated Character2/Skeleton3D/HandSlotRight/WeaponSlotRight"]
 transform = Transform3D(0.998514, -0.0195239, -0.050893, 0.0184359, 0.999594, -0.0217669, 0.0512972, 0.0207962, 0.998467, 0.00527036, 0.275711, -0.0269134)
@@ -4109,6 +4118,8 @@ metadata/_edit_lock_ = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ChasePlayer"]
 shape = SubResource("SphereShape3D_h7enu")
 
+[connection signal="body_entered" from="KayKit_AnimatedCharacter_v1_2/KayKit Animated Character2/Skeleton3D/HandSlotRight/WeaponSlotRight" to="KayKit_AnimatedCharacter_v1_2/KayKit Animated Character2/Skeleton3D/HandSlotRight/WeaponSlotRight" method="_on_body_entered"]
+[connection signal="body_exited" from="KayKit_AnimatedCharacter_v1_2/KayKit Animated Character2/Skeleton3D/HandSlotRight/WeaponSlotRight" to="KayKit_AnimatedCharacter_v1_2/KayKit Animated Character2/Skeleton3D/HandSlotRight/WeaponSlotRight" method="_on_body_exited"]
 [connection signal="animation_finished" from="KayKit_AnimatedCharacter_v1_2/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="AttackPlayer" to="." method="_on_attack_player_body_entered"]
 [connection signal="body_exited" from="AttackPlayer" to="." method="_on_attack_player_body_exited"]

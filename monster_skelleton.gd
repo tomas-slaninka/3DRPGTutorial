@@ -69,3 +69,7 @@ func _on_chase_player_body_exited(body):
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "Defeat":
 		queue_free()
+
+
+func _on_weapon_slot_right_body_entered(body):
+	pass # Replace with function body.

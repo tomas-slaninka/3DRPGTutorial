@@ -10,8 +10,7 @@ func _process(delta):
 			$sword_broken_half.show()
 		_:
 			pass
-	
-		
+
 func hideAll():
 	$sword_broken.hide()
 	#$sword_broken_half.hide()

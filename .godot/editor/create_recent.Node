@@ -1,5 +1,6 @@
-MeshInstance3D
 Label
+ProgressBar
+MeshInstance3D
 Panel
 Control
 AnimationPlayer
